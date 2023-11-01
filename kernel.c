@@ -1,22 +1,16 @@
 #include "kernel.h"
-#include "c.h"
-#include "rw_io.h"
-#include "display.h"
+#include "drivers/c.h"
+#include "drivers/rw_io.h"
+#include "drivers/display.h"
 void boot_kernel(){
     init_display();
     clear_color(BLACK);
     clear_display();
-    display_text("hello world",WHITE);
+    display_text("Welcome to CDoS rv1!",WHITE);
     new_line();
-    display_text("line #2",WHITE);
-    new_line();
-    display_text("green text",GREEN);
-    set_display_char('1',RED,20,0);
+    display_text("root.CDoS:> ",WHITE);
     show_cursor();
-    move_cursor(8,5);
-    display_text("the quick brown fox jumps over the lazy dog",RED);
     set_cursor(cursor_i);
-    show_cursor();
     while(1){
     }
 }

@@ -6,12 +6,13 @@ GRUB = grub-mkrescue
 ASM = nasm
 LINK_FILE = -T linker.ld
 LINKER_FLAGS = -m elf_i386
+DRIVERS = drivers/
 BINARY = CDOS.bin
 all:
 	$(ASM) -f elf32 boot.s -o $(BUILD)boot.o
 	$(GC) $(FLAGS) -c kernel.c -o $(BUILD)kernel.o
-	$(GC) $(FLAGS) -c display.c -o $(BUILD)display.o
-	$(GC) $(FLAGS) -c rw_io.c -o $(BUILD)rw_io.o
+	$(GC) $(FLAGS) -c $(DRIVERS)display.c -o $(BUILD)display.o
+	$(GC) $(FLAGS) -c $(DRIVERS)rw_io.c -o $(BUILD)rw_io.o
 	ld $(LINKER_FLAGS) $(LINK_FILE) -o $(BUILD)$(BINARY) $(BUILD)boot.o $(BUILD)kernel.o $(BUILD)display.o $(BUILD)rw_io.o
 	mkdir -p $(ISO)boot/grub
 	cp $(BUILD)$(BINARY) $(ISO)/boot/
