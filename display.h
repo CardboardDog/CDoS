@@ -19,7 +19,7 @@
 #define YELLOW 14
 #define WHITE 15
 #define VGA_ADDRESS 0xB8000
-#define DISP_BUFFER_SIZE 4000
+#define DISP_BUFFER_SIZE 2200
 extern uint16* display_buffer;
 extern uint32 cursor_i;
 extern uint8 display_color;
@@ -30,4 +30,9 @@ void clear_display();
 void display_text(char* string, uint8 color);
 void clear_color(uint8 color);
 void new_line();
+void move_cursor(uint16 x, uint16 y);
+void set_display_char(uint8 character, uint8 color, uint16 x, uint16 y);
+void show_cursor();
+void hide_cursor();
+void set_cursor(uint32 position);
 #endif

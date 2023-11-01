@@ -11,7 +11,8 @@ all:
 	$(ASM) -f elf32 boot.s -o $(BUILD)boot.o
 	$(GC) $(FLAGS) -c kernel.c -o $(BUILD)kernel.o
 	$(GC) $(FLAGS) -c display.c -o $(BUILD)display.o
-	ld $(LINKER_FLAGS) $(LINK_FILE) -o $(BUILD)$(BINARY) $(BUILD)boot.o $(BUILD)kernel.o $(BUILD)display.o
+	$(GC) $(FLAGS) -c rw_io.c -o $(BUILD)rw_io.o
+	ld $(LINKER_FLAGS) $(LINK_FILE) -o $(BUILD)$(BINARY) $(BUILD)boot.o $(BUILD)kernel.o $(BUILD)display.o $(BUILD)rw_io.o
 	mkdir -p $(ISO)boot/grub
 	cp $(BUILD)$(BINARY) $(ISO)/boot/
 	cp grub.cfg $(ISO)boot/grub
