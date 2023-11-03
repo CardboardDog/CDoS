@@ -32,6 +32,7 @@ void clear_color(uint8 color);
 void new_line();
 void move_cursor(uint16 x, uint16 y);
 void set_display_char(uint8 character, uint8 color, uint16 x, uint16 y);
+void display_char(uint8 chr, uint8 color);
 void show_cursor();
 void hide_cursor();
 void set_cursor(uint32 position);

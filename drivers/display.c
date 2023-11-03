@@ -1,4 +1,5 @@
 #include "display.h"
+#include "rw_io.h"
 uint16* display_buffer;
 uint32 cursor_i;
 uint8 display_color = 0;
@@ -60,4 +61,8 @@ void init_display(){
     display_buffer=VGA_ADDRESS;
     clear_color(BLACK);
     clear_display();
+}
+void display_char(uint8 chr, uint8 color){
+    display_buffer[cursor_i] = get_char(chr,color,display_color);
+    cursor_i++;
 }
