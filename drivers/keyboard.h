@@ -1,4 +1,4 @@
-#include "c.h"
+#include "../c.h"
 #ifndef CDOS_KEYBOARD
 #define CDOS_KEYBOARD
 #define NONE 0

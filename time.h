@@ -1,5 +1,5 @@
 #ifndef CDOS_TIME
 #define CDOS_TIME
-#include "drivers/c.h"
+#include "c.h"
 void sleep(uint32 ms);
 #endif

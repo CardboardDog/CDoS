@@ -1,5 +1,5 @@
 #include "kernel.h"
-#include "drivers/c.h"
+#include "c.h"
 #include "drivers/rw_io.h"
 #include "drivers/display.h"
 #include "drivers/keyboard.h"

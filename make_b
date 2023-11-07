@@ -15,7 +15,7 @@ all:
 	$(GC) $(FLAGS) -c $(DRIVERS)rw_io.c -o $(BUILD)rw_io.o
 	$(GC) $(FLAGS) -c $(DRIVERS)keyboard.c -o $(BUILD)keyboard.o
 	$(GC) $(FLAGS) -c time.c -o $(BUILD)time.o
-	$(GC) $(FLAGS) -c $(DRIVERS)c.c -o $(BUILD)c.o
+	$(GC) $(FLAGS) -c c.c -o $(BUILD)c.o
 	ld $(LINKER_FLAGS) $(LINK_FILE) -o $(BUILD)$(BINARY) $(BUILD)boot.o $(BUILD)kernel.o $(BUILD)display.o $(BUILD)rw_io.o $(BUILD)keyboard.o $(BUILD)time.o $(BUILD)c.o
 	mkdir -p $(ISO)boot/grub
 	cp $(BUILD)$(BINARY) $(ISO)/boot/

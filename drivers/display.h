@@ -1,6 +1,6 @@
 #ifndef CDOS_DISPLAY
 #define CDOS_DISPLAY
-#include "c.h"
+#include "../c.h"
 // replace with enum?
 #define BLACK 0
 #define BLUE 1
